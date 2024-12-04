@@ -8,10 +8,10 @@ const Navbar = () => {
   const links = (
     <>
       <NavLink to="/" className={({isActive})=>
-      isActive? 'text-yellow-300':''
+      isActive? 'text-white bg-yellow-400 px-3 py-1 rounded-xl':''
       }>Home</NavLink>
       <NavLink className={({isActive})=>
-      isActive? 'text-yellow-300':''
+      isActive?'text-white bg-yellow-400 px-3 py-1 rounded-xl':''
       } to="/allmovies">AllMovies</NavLink>
     </>
   );
@@ -48,21 +48,23 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
+            <div className=' rounded-2xl bg-yellow-400'>
             <a className="btn btn-ghost text-2xl">
-              <span className="font-extrabold text-4xl text-yellow-300 inline-block align-middle">
+              <span className="font-bold text-3xl text-white inline-block align-middle">
                 M
               </span>
-              <span className="inline-block text-yellow-400 font-bold">oviesCloud</span>
+              <span className="inline-block  text-re font-semibold">oviesCloud</span>
             </a>
+            </div>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 gap-6 font-semibold text-lg">{links}</ul>
           </div>
           <div className="navbar-end gap-4">
-            <Link to="/login" className={location.pathname === '/login'? 'text-yellow-500 font-semibold' : ''}>
+            <Link to="/login" className={location.pathname === '/login'?  ' bg-yellow-400 px-7 py-2 rounded-full text-white font-semibold' : 'font-semibold'}>
               Login
             </Link>
-            <Link to="/register" className={location.pathname === '/register'? 'text-yellow-500 font-semibold': ''}>
+            <Link to="/register" className={location.pathname === '/register'? ' bg-yellow-400 px-7 py-2 rounded-full text-white font-semibold': 'font-semibold'}>
               Register
             </Link>
           </div>
