@@ -6,6 +6,8 @@ import HomeLayout from './layout/HomeLayout'
 import ErrorPage from './pages/ErrorPage'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import Register from './pages/Register'
+import Allmovies from './pages/Allmovis'
 
 import {
   createBrowserRouter,
@@ -26,8 +28,17 @@ const router = createBrowserRouter([
     ]
   },
   {
+    path:'/allmovies',
+    element:<Allmovies/>
+
+  },
+  {
     path:'/login',
     element:<Login/>
+  },
+  {
+    path:'/register',
+    element:<Register/>
   }
 ]);
 
