@@ -5,7 +5,8 @@ import Footer from '../components/Footer'
 const HomeLayout = () => {
   return (
     <div>
-    <Home/>
+      <Home/>
+
     <div className='min-h-[calc(100vh-232px)]'>
 
     </div>
