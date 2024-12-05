@@ -39,7 +39,7 @@ const Login = () => {
             <button><FcGoogle /></button>
           </div>
           <div>
-          <p>Signup with Google</p>
+          <p className='font-semibold'>Signup with Google</p>
           </div>
         </div>
         <label className="label">

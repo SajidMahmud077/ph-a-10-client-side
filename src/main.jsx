@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Allmovies from './pages/Allmovis'
+import Addmovie from './pages/Addmovie'
 
 import {
   createBrowserRouter,
@@ -28,9 +29,13 @@ const router = createBrowserRouter([
     ]
   },
   {
+    path:'/addmovie',
+    element:<Addmovie/>
+
+  },
+  {
     path:'/allmovies',
     element:<Allmovies/>
-
   },
   {
     path:'/login',

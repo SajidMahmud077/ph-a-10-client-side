@@ -1,44 +1,45 @@
-import React from 'react';
+import React from "react";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebookF, FaGithubSquare } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="footer bg-base-200 text-base-content p-10">
-    <nav>
-      <h6 className="footer-title">Services</h6>
-      <a className="link link-hover">Branding</a>
-      <a className="link link-hover">Design</a>
-      <a className="link link-hover">Marketing</a>
-      <a className="link link-hover">Advertisement</a>
-    </nav>
-    <nav>
-      <h6 className="footer-title">Company</h6>
-      <a className="link link-hover">About us</a>
-      <a className="link link-hover">Contact</a>
-      <a className="link link-hover">Jobs</a>
-      <a className="link link-hover">Press kit</a>
-    </nav>
-    <nav>
-      <h6 className="footer-title">Legal</h6>
-      <a className="link link-hover">Terms of use</a>
-      <a className="link link-hover">Privacy policy</a>
-      <a className="link link-hover">Cookie policy</a>
-    </nav>
-    <form>
-      <h6 className="footer-title">Newsletter</h6>
-      <fieldset className="form-control w-80">
-        <label className="label">
-          <span className="label-text">Enter your email address</span>
-        </label>
-        <div className="join">
-          <input
-            type="text"
-            placeholder="username@site.com"
-            className="input input-bordered join-item" />
-          <button className="btn btn-primary join-item">Subscribe</button>
+    <footer className="footer footer-center bg-[#7bc4] text-base-content p-10">
+      <div>
+        <a className="font-bold text-3xl" href="/">
+          MoviesCloud
+        </a>
+      </div>
+      <nav className="grid grid-flow-col gap-4">
+        <a className="link link-hover font-semibold">Add Movies</a>
+        <a className="link link-hover font-semibold">All Movies</a>
+        <a className="link link-hover font-semibold">About us</a>
+        <a className="link link-hover font-semibold">Contact</a>
+      </nav>
+      <nav>
+        <div className="grid grid-flow-col gap-4">
+          <a href="" className="text-3xl">
+            <FcGoogle />
+          </a>
+          <a href="" className="text-3xl text-blue-500">
+            <FaFacebookF />
+          </a>
+          <a href="" className="text-3xl text-pink-600">
+            <FaSquareInstagram />
+          </a>
+          <a className="text-3xl" href="">
+            <FaGithubSquare />
+          </a>
         </div>
-      </fieldset>
-    </form>
-  </footer>
+      </nav>
+      <aside>
+        <p>
+          Copyright © {new Date().getFullYear()} - All right reserved by
+          MoviesCloud
+        </p>
+      </aside>
+    </footer>
   );
 };
 

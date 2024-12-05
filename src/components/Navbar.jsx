@@ -12,6 +12,9 @@ const Navbar = () => {
       }>Home</NavLink>
       <NavLink className={({isActive})=>
       isActive?'text-white bg-yellow-400 px-3 py-1 rounded-xl':''
+      } to="/addmovie">AddMovie</NavLink>
+      <NavLink className={({isActive})=>
+      isActive?'text-white bg-yellow-400 px-3 py-1 rounded-xl':''
       } to="/allmovies">AllMovies</NavLink>
     </>
   );
