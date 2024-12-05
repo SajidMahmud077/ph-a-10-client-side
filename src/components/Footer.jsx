@@ -25,7 +25,7 @@ const Footer = () => {
           <a href="" className="text-3xl text-blue-500">
             <FaFacebookF />
           </a>
-          <a href="" className="text-3xl text-pink-600">
+          <a href="" className="text-3xl text-pink-500">
             <FaSquareInstagram />
           </a>
           <a className="text-3xl" href="">

@@ -51,12 +51,12 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-            <div className=' rounded-2xl bg-yellow-400'>
-            <a className="btn btn-ghost text-2xl">
-              <span className="font-bold text-3xl text-white inline-block align-middle">
+            <div className=''>
+            <a href='' className=" text-2xl">
+              <span className="font-bold text-4xl text-yellow-300 inline-block">
                 M
               </span>
-              <span className="inline-block  text-re font-semibold">oviesCloud</span>
+              <span className="inline-block  text-2xl font-bold">oviesCloud</span>
             </a>
             </div>
           </div>
