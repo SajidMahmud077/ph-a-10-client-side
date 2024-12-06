@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from 'sweetalert2'
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import addmoviebg from "../assets/addmoviebg.jpg";
@@ -37,7 +38,13 @@ const Addmovie = () => {
     })
     .then(res=> res.json())
     .then(data =>{
-      alert('Movie added successfully')
+      if(data.insertedId){
+        Swal.fire({
+          title: "Success!",
+          text: "Movie Added Successfully",
+          icon: "success"
+        });
+      }
       console.log(data)
     })
     

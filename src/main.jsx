@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Allmovies from './pages/Allmovis'
 import Addmovie from './pages/Addmovie'
+import Moviedetails from './components/Moviedetails'
 
 import {
   createBrowserRouter,
@@ -41,6 +42,13 @@ const router = createBrowserRouter([
 
   },
   {
+    path:'/moviedetails/:id',
+    element:<Moviedetails/>,
+    loader:({params})=> fetch(`http://localhost:5000/movie/${params.id}`)
+
+  },
+
+  {
     path:'/allmovies',
     element:<Allmovies/>
   },
@@ -58,5 +66,5 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
 
-  </StrictMode>,
+  </StrictMode>
 )

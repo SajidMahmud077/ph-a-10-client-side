@@ -2,14 +2,14 @@ import slide1 from "../assets/slider1.jpg";
 import slide2 from "../assets/slider2.jpg";
 import slide3 from "../assets/slider3.jpg";
 import slide4 from "../assets/slide4.jpg";
-import { useLoaderData} from "react-router-dom";
+import { useLoaderData,useNavigate} from "react-router-dom";
 
 const Home = () => {
   const movies = useLoaderData();
+  const navigate=useNavigate()
+  const featuredemovies=[...movies].slice(0,6)
 
-  const featuredMovies = [...movies]
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 6);
+
   return (
     <>
       <header className="container mx-auto px-2">
@@ -109,11 +109,11 @@ const Home = () => {
           <p className="text-gray-500 mt-2">
             Explore the best-rated movies curated just for you.
           </p>
-          <div className="mt-2 w-20 h-1 bg-gradient-to-r  from-yellow-300 to-red-400 mx-auto"></div>
+          <div className="mt-2 w-20 h-2 bg-gradient-to-r  from-yellow-300 to-red-400 mx-auto"></div>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-          {featuredMovies.map((movie) => (
+          {featuredemovies.map((movie) => (
             <div
               key={movie._id}
               className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
@@ -129,7 +129,7 @@ const Home = () => {
                 </span>
               </div>
               <div className="p-4">
-                <h3 className="text-2xl font-semibold mb-2">{movie.title}</h3>
+                <h3 className="text-2xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 ">{movie.title}</h3>
                 <p className="text-lg font-semibold text-gray-300 mb-1">
                   Genre: {movie.genre}
                 </p>
@@ -139,7 +139,7 @@ const Home = () => {
                 <p className="text-lg font-semibold text-gray-300">
                   Release Year: {movie.releaseyear}
                 </p>
-                <button
+                <button onClick={()=> navigate(`/moviedetails/${movie._id}`)}
                   className="mt-4 bg-gradient-to-r bg-yellow-500 hover:from-orange-600 hover:to-red-600 text-black px-4 py-2 rounded font-semibold"
                   
                 >
@@ -148,6 +148,10 @@ const Home = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className='mt-12 items-center text-center'>
+          <button onClick={()=>navigate('/allmovies')}
+          className='btn bg-gradient-to-r from-yellow-300 via-orange-500 to-red-500 hover:to-green-400  font-semibold text-white text-lg'>See All Movies</button>
         </div>
       </main>
     </>
