@@ -1,14 +1,16 @@
 import React from 'react';
-import Home from '../pages/Home'
+import { Outlet } from "react-router-dom";
+import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 const HomeLayout = () => {
   return (
     <div>
-      <Home/>
+      <Navbar/>
+    
 
     <div className='min-h-[calc(100vh-232px)]'>
-
+    <Outlet/>
     </div>
     <Footer/>
     </div>

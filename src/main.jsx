@@ -23,8 +23,15 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home/>
-      },
+        element:<Home/>,
+        loader: async () => {
+          const response = await fetch("http://localhost:5000/movie");
+          const data = await response.json();
+          console.log(data); 
+          return data;
+        },
+        
+      }
 
     ]
   },
