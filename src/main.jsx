@@ -1,6 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import App from './App.jsx'
 import HomeLayout from './layout/HomeLayout'
 import ErrorPage from './pages/ErrorPage'
@@ -10,6 +12,8 @@ import Register from './pages/Register'
 import Allmovies from './pages/Allmovis'
 import Addmovie from './pages/Addmovie'
 import Moviedetails from './components/Moviedetails'
+import Myfavourite from './pages/Myfavourite';
+import AuthProvider from './Provider/AuthProvider'
 
 import {
   createBrowserRouter,
@@ -54,6 +58,11 @@ const router = createBrowserRouter([
     loader:()=> fetch('http://localhost:5000/movie')
   },
   {
+    path:'/myfavourite',
+    element:<Myfavourite/>
+
+  },
+  {
     path:'/login',
     element:<Login/>
   },
@@ -65,7 +74,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <AuthProvider>
+    <ToastContainer position="top-center" autoClose={3000} />
     <RouterProvider router={router} />
+    </AuthProvider>
 
   </StrictMode>
 )

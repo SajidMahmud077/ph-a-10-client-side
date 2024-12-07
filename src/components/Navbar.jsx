@@ -1,21 +1,46 @@
-import React from 'react';
+import React from "react";
 
-
-import { NavLink, Link,useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const location=useLocation()
+  const location = useLocation();
   const links = (
     <>
-      <NavLink to="/" className={({isActive})=>
-      isActive? 'text-white bg-yellow-400 px-3 py-1 rounded-xl':''
-      }>Home</NavLink>
-      <NavLink className={({isActive})=>
-      isActive?'text-white bg-yellow-400 px-3 py-1 rounded-xl':''
-      } to="/addmovie">AddMovie</NavLink>
-      <NavLink className={({isActive})=>
-      isActive?'text-white bg-yellow-400 px-3 py-1 rounded-xl':''
-      } to="/allmovies">AllMovies</NavLink>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive ? "text-white bg-yellow-400 px-3 py-1 rounded-xl" : ""
+        }
+      >
+        Home
+      </NavLink>
+
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "text-white bg-yellow-400 px-3 py-1 rounded-xl" : ""
+        }
+        to="/allmovies"
+      >
+        AllMovies
+      </NavLink>
+
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "text-white bg-yellow-400 px-3 py-1 rounded-xl" : ""
+        }
+        to="/myfavourite"
+      >
+        My Favorites
+      </NavLink>
+
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "text-white bg-yellow-400 px-3 py-1 rounded-xl" : ""
+        }
+        to="/addmovie"
+      >
+        AddMovie
+      </NavLink>
     </>
   );
   return (
@@ -51,23 +76,41 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-            <div className=''>
-            <a href='' className=" text-2xl">
-              <span className="font-bold text-4xl text-yellow-300 inline-block">
-                M
-              </span>
-              <span className="inline-block  text-2xl font-bold">oviesCloud</span>
-            </a>
+            <div className="">
+              <a href="" className=" text-2xl">
+                <span className="font-bold text-4xl text-yellow-300 inline-block">
+                  M
+                </span>
+                <span className="inline-block  text-2xl font-bold">
+                  oviesCloud
+                </span>
+              </a>
             </div>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 gap-6 font-semibold text-lg">{links}</ul>
+            <ul className="menu menu-horizontal px-1 gap-6 font-semibold text-lg">
+              {links}
+            </ul>
           </div>
           <div className="navbar-end gap-4">
-            <Link to="/login" className={location.pathname === '/login'?  ' bg-yellow-400 px-7 py-2 rounded-full text-white font-semibold' : 'font-semibold'}>
+            <Link
+              to="/login"
+              className={
+                location.pathname === "/login"
+                  ? " bg-yellow-400 px-7 py-2 rounded-full text-white font-semibold"
+                  : "font-semibold"
+              }
+            >
               Login
             </Link>
-            <Link to="/register" className={location.pathname === '/register'? ' bg-yellow-400 px-7 py-2 rounded-full text-white font-semibold': 'font-semibold'}>
+            <Link
+              to="/register"
+              className={
+                location.pathname === "/register"
+                  ? " bg-yellow-400 px-7 py-2 rounded-full text-white font-semibold"
+                  : "font-semibold"
+              }
+            >
               Register
             </Link>
           </div>
