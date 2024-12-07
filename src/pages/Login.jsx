@@ -87,7 +87,7 @@ const Login = () => {
           </div>
         </div>
         {
-          error && <p className='text-sm text-red-500'>Paassword Incorrect!check password</p>
+          error && <p className='text-sm text-white'>Paassword Incorrect! check password</p>
         }
         <label className="label">
             <p  className="label-text-alt text-white  font-bold">Don't  have an Account?<a  className='text-xl font-semibold text-white ml-2' href='/register'>Register</a></p>
