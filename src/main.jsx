@@ -50,7 +50,8 @@ const router = createBrowserRouter([
 
   {
     path:'/allmovies',
-    element:<Allmovies/>
+    element:<Allmovies/>,
+    loader:()=> fetch('http://localhost:5000/movie')
   },
   {
     path:'/login',
