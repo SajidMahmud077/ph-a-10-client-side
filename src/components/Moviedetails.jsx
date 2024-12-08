@@ -7,7 +7,7 @@ const Moviedetails = () => {
   const movie = useLoaderData();
   const navigate = useNavigate();
   const handleDeleteMovie = (id) => {
-    fetch(`http://localhost:5000/movie/${id}`, {
+    fetch(`https://ph-assignment-10-server-gold.vercel.app/movie/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

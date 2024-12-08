@@ -87,7 +87,7 @@ const Navbar = () => {
                     className="w-10 h-10 rounded-full"
                   />
                   {user?.displayName && (
-                    <span className="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-gray-800 text-white text-sm px-2 py-1 rounded-lg shadow-lg">
+                    <span className="absolute left-1/2 -translate-x-1/2  hidden group-hover:block bg-gray-800 text-white text-sm px-2 py-1 rounded-lg shadow-lg">
                       {user.displayName}
                     </span>
                   )}

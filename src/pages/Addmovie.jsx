@@ -96,7 +96,7 @@ const Addmovie = () => {
 
     console.log(newMovie)
 
-    fetch('http://localhost:5000/movie', {
+    fetch('https://ph-assignment-10-server-gold.vercel.app/movie', {
       method:'POST',
       headers:{
         'content-type': 'application/json'

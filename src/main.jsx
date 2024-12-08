@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         path:'/',
         element:<Home/>,
         loader: async () => {
-          const response = await fetch("http://localhost:5000/movie");
+          const response = await fetch("https://ph-assignment-10-server-gold.vercel.app/movie");
           const data = await response.json();
           console.log(data); 
           return data;
@@ -53,20 +53,21 @@ const router = createBrowserRouter([
     element:<PrivateRoute>
     <Moviedetails/>
   </PrivateRoute>,
-    loader:({params})=> fetch(`http://localhost:5000/movie/${params.id}`)
+    loader:({params})=> fetch(`https://ph-assignment-10-server-gold.vercel.app/movie/${params.id}`)
 
   },
 
   {
     path:'/allmovies',
     element:<Allmovies/>,
-    loader:()=> fetch('http://localhost:5000/movie')
+    loader:()=> fetch('https://ph-assignment-10-server-gold.vercel.app/movie')
   },
   {
     path:'/myfavourite',
     element:<PrivateRoute>
       <Myfavourite/>
-    </PrivateRoute>
+    </PrivateRoute>,
+    loader:({params})=>fetch(`https://ph-assignment-10-server-gold.vercel.app/movie/${params.email}`)
 
   },
   {
