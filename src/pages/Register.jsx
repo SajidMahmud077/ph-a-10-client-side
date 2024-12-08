@@ -7,7 +7,7 @@ import bg from '../assets/bg.jpg'
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Register = () => {
-  const {createUser,setUser}=useContext(AuthContext)
+  const {createUser,setUser,updateUserProfile}=useContext(AuthContext)
   const [error,setError]=useState('')
   const navigate=useNavigate()
   const handleRegister= e =>{
@@ -32,6 +32,7 @@ const Register = () => {
       const  user=result.user;
       setUser(user)
       toast.success('Registration Successfull!');
+      updateUserProfile({displayName:name,photoURL:photoUrl})
       navigate('/')
     })
     .catch((error)=>{

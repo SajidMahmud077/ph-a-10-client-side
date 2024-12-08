@@ -1,4 +1,3 @@
-import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { NavLink, Link, useLocation } from "react-router-dom";
@@ -27,29 +26,27 @@ const Navbar = () => {
         AllMovies
       </NavLink>
 
-    {user && user.email ? (
+      {user && user.email ? (
         <NavLink
-        className={({ isActive }) =>
-          isActive ? "text-white bg-yellow-400 px-3 py-1 rounded-xl" : ""
-        }
-        to="/myfavourite"
-      >
-        My Favorites
-      </NavLink>
-    ):null}
+          className={({ isActive }) =>
+            isActive ? "text-white bg-yellow-400 px-3 py-1 rounded-xl" : ""
+          }
+          to="/myfavourite"
+        >
+          My Favorites
+        </NavLink>
+      ) : null}
 
-     {
-      user && user.email ? (
+      {user && user.email ? (
         <NavLink
-        className={({ isActive }) =>
-          isActive ? "text-white bg-yellow-400 px-3 py-1 rounded-xl" : ""
-        }
-        to="/addmovie"
-      >
-        AddMovie
-      </NavLink>
-      ): null
-     }
+          className={({ isActive }) =>
+            isActive ? "text-white bg-yellow-400 px-3 py-1 rounded-xl" : ""
+          }
+          to="/addmovie"
+        >
+          AddMovie
+        </NavLink>
+      ) : null}
     </>
   );
 
@@ -59,9 +56,7 @@ const Navbar = () => {
         <div className="navbar container mx-auto py-4">
           <div className="navbar-start">
             <div className="dropdown">
-              <div role="button" className="btn btn-ghost lg:hidden">
-          
-              </div>
+              <div role="button" className="btn btn-ghost lg:hidden"></div>
               <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                 {links}
               </ul>
@@ -85,13 +80,17 @@ const Navbar = () => {
           <div className="navbar-end gap-4">
             {user ? (
               <>
-                <div className="relative">
+                <div className="relative group">
                   <img
-                    src={user?.email || ""}
-                    alt={user?.displayName || "User"}
+                    src={user?.photoURL || "User"}
+                    alt={user?.displayName || ""}
                     className="w-10 h-10 rounded-full"
                   />
-                
+                  {user?.displayName && (
+                    <span className="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-gray-800 text-white text-sm px-2 py-1 rounded-lg shadow-lg">
+                      {user.displayName}
+                    </span>
+                  )}
                 </div>
                 <button
                   onClick={logOut}

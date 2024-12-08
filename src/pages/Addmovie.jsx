@@ -1,10 +1,12 @@
-import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import addmoviebg from "../assets/addmoviebg.jpg";
 
 const Addmovie = () => {
+  const {user}=useContext(AuthContext)
   const handleAddMovie=(event)=>{
     event.preventDefault();
     const form=event.target;
@@ -80,10 +82,6 @@ const Addmovie = () => {
     }
 
 
-
-
-
-  
     const newMovie = {
       poster,
       title,
@@ -92,6 +90,8 @@ const Addmovie = () => {
       releaseyear: Number(releaseyear), 
       rating: Number(rating),  
       summary,
+      userEmail:user?.email || '' ,
+    
     };
 
     console.log(newMovie)
